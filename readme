@@ -1,0 +1,6 @@
+http://127.0.0.1:8000/admin/ admin ekranı
+http://127.0.0.1:8000/api/login-page/ giriş ekranı
+http://127.0.0.1:8000/api/register-page/ kayıt ekranı
+http://127.0.0.1:8000/api/menu-page/ ana menü
+http://127.0.0.1:8000/api/build-aircraft/ uçak üretim ve detay ekranı(sadece montaj grubu erişir, montaj grubu sadece aynı tür uçağın 4 farklı parçasından sahip olduğunda üretim yapar, eksik parça varsa ekranda uyarı çıkar)
+http://127.0.0.1:8000/api/parca-uret/ parça üretim ve detay ekranı (sadece parça grupları erişir, gruplar sadece admin tarafından kendilerinni atandığı gruba parça üretebilir) 
