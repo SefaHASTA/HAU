@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Üretilen Uçaklar</h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Uçak Tipi</th>
+      <th>Üretim Tarihi</th>
+      <th>Kullanılan Parçalar</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for aircraft in built_aircrafts %}
+      <tr>
+        <td>{{ aircraft.id }}</td>
+        <td>{{ aircraft.aircraft_type.name }}</td>
+        <td>{{ aircraft.created_at|date:"Y-m-d H:i" }}</td>
+        <td>
+          <ul>
+            {% for part in aircraft.parts.all %}
+              <li>{{ part.part_type.name }} - {{ part.team.name }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="4">Henüz uçak üretilmemiş.</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
